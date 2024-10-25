@@ -18,7 +18,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "gpt4all": "^4.0.0"
+    "gpt4all": "^4.0.0",
+    "xrpl": "^4.0.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
