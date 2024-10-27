@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const xrpl = require('xrpl');
 
 const {get_ledger, list_transaction} = require('./services/ledger')
+const { list_amendments } = require('./services/transactions')
 
 dotenv.config();
 
@@ -31,6 +32,12 @@ app.get('/ledger', async (req, res) => {
 
 app.get('/transactions', async (req, res) => {
   let resp = await list_transaction()
+  
+  res.json(resp)  
+});
+
+app.get('/amendments', async (req, res) => {
+  let resp = await list_amendments()
   
   res.json(resp)  
 });
