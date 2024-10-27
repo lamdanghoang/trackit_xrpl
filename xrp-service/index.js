@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios');
 const dotenv = require('dotenv');
 const xrpl = require('xrpl');
+
+const {get_ledger, list_transaction} = require('./services/ledger')
 
 dotenv.config();
 
@@ -20,6 +21,18 @@ app.get('/xrp', async (req, res) => {
     const standby_wallet = xrpl.Wallet.fromSeed("sEdVd1vJvRcoXCmrx7SwY8g2bhaD35h")
     
     res.json(standby_wallet.classicAddress)  
+});
+
+app.get('/ledger', async (req, res) => {
+  let resp = await get_ledger()
+  
+  res.json(resp)  
+});
+
+app.get('/transactions', async (req, res) => {
+  let resp = await list_transaction()
+  
+  res.json(resp)  
 });
 
 app.listen(port, () => {
