@@ -1,7 +1,7 @@
 import "dotenv/config";
 
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
-export const XRPL_API_URL = process.env.NEXT_PUBLIC_XRPL_API_URL || "";
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3003";
+export const XRPL_API_URL = process.env.NEXT_PUBLIC_XRPL_API_URL || "http://localhost:2411";
 export const INFURA_API_KEY = process.env.NEXT_PUBLIC_INFURA_API_KEY || "";
 
 export const tokenAptLists = [
