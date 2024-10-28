@@ -6,7 +6,7 @@ import { setupCommandHandlers } from '../handlers/command.handler';
 let bot: Telegraf<BotContext>;
 
 export async function initBot() {
-    const token = process.env.BOT_TOKEN;
+    const token = process.env.BOT_TOKEN || '7862004673:AAFNqYERRLvjIE_tT58V8gY92IwMWaFaSx4';
     if (!token) {
         throw new Error('BOT_TOKEN must be provided in environment variables');
     }

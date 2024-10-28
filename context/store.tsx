@@ -1,31 +1,35 @@
-"use client"
-import { createContext, Dispatch, SetStateAction, useState } from "react"
+"use client";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 
 interface ContextProps {
-    loadingFullScreen: boolean;
-    setLoadingFullScreen: Dispatch<SetStateAction<boolean>>,
-    chain: string;
-    setChain: Dispatch<SetStateAction<string>>,
+  loadingFullScreen: boolean;
+  setLoadingFullScreen: Dispatch<SetStateAction<boolean>>;
+  chain: string;
+  setChain: Dispatch<SetStateAction<string>>;
 }
 
 const GlobalContext = createContext<ContextProps>({
-    loadingFullScreen: false,
-    setLoadingFullScreen: () => { },
-    chain: "APTOS",
-    setChain: () => { },
+  loadingFullScreen: false,
+  setLoadingFullScreen: () => {},
+  chain: "APTOS",
+  setChain: () => {},
 });
 
 export default GlobalContext;
 
 export const GlobalContextProvider = ({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) => {
-    const [loadingFullScreen, setLoadingFullScreen] = useState(false);
-    const [chain, setChain] = useState("ALGORAND");
+  const [loadingFullScreen, setLoadingFullScreen] = useState(false);
+  const [chain, setChain] = useState("XRP");
 
-    return <GlobalContext.Provider value={{ loadingFullScreen, setLoadingFullScreen, chain, setChain }} >
-        {children}
+  return (
+    <GlobalContext.Provider
+      value={{ loadingFullScreen, setLoadingFullScreen, chain, setChain }}
+    >
+      {children}
     </GlobalContext.Provider>
-}
+  );
+};

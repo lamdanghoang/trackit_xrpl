@@ -12,7 +12,7 @@ exports.get_ledger = async () =>{
 }
 
 exports.list_transaction = async () =>{
-    const response = await axios.get(`${xrp_scan_url}/api/v1/ledger/80000000/transactions`);
+    const response = await axios.get(`${xrp_scan_url}/api/v1/ledger/91696847/transactions`);
     
     return response.data;
 }
