@@ -1,3 +1,17 @@
+export interface AmendmentInfo {
+    amendment_id: string
+    introduced: string
+    name: string
+    enabled: boolean
+    majority: number | null
+    supported: boolean
+    count: number
+    threshold: number
+    validations: number
+    enabled_on?: string
+    tx_hash?: string
+}
+
 export interface GovernanceInfo {
     proposal_id: string;
     num_votes: number;
