@@ -2,11 +2,12 @@ import { Telegraf } from 'telegraf';
 import { logger } from '../utils/logger';
 import { BotContext } from '../types';
 import { setupCommandHandlers } from '../handlers/command.handler';
+require('dotenv').config();
 
 let bot: Telegraf<BotContext>;
 
 export async function initBot() {
-    const token = process.env.BOT_TOKEN || '7862004673:AAFNqYERRLvjIE_tT58V8gY92IwMWaFaSx4';
+    const token = process.env.BOT_TOKEN || '';
     if (!token) {
         throw new Error('BOT_TOKEN must be provided in environment variables');
     }

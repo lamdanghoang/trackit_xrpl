@@ -8,7 +8,7 @@ export const SUPPORTED_CHAINS: Record<string, ChainConfig> = {
     bsc: {
         rpcUrl: process.env.XRP_RPC_URL || '',
         chainId: 56,
-        name: 'Ripple L1'
+        name: 'Movement'
     }
     // Add more chains as needed
 };

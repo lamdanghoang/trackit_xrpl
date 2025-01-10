@@ -16,7 +16,7 @@ async function main() {
         await setupBlockchainListeners();
 
         // Start tracker jobs
-        startTrackerJobs();
+        // startTrackerJobs();
 
         logger.info('Bot successfully started');
     } catch (error) {
